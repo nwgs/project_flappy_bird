@@ -4,6 +4,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 public class Bird {
 
+    Main main;
+
     int x, y;
     int width, height;
 
@@ -58,6 +60,15 @@ public class Bird {
         for (Texture texture : framesArray) {
             texture.dispose();
         }
+    }
+
+    public boolean is_In_Screen(){
+
+        if(y + height < 0) return false;
+        if(y > main.SCR_HEIGHT) return false;
+
+        //def
+        return true;
     }
 
 }
